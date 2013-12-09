@@ -1,0 +1,20 @@
+{
+    "name": "ci",
+    "description": "CI and CD",
+    "require": {
+        "zendframework/zendframework1": "1.12.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "mockery/mockery": "*",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jtef",
+            "email": "email@address.com"
+        }
+    ],
+    "minimum-stability": "beta"
+}
