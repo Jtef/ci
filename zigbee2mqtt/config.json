@@ -1,8 +1,8 @@
 {
   "name": "Zigbee2mqtt",
-  "version": "1.19.1-1",
+  "version": "1.23.0-1",
   "slug": "zigbee2mqtt",
-  "description": "Zigbee2mqtt add-on",
+  "description": "Use your ZigBee devices without the vendor's bridge or gateway",
   "uart": true,
   "url": "https://github.com/zigbee2mqtt/hassio-zigbee2mqtt/tree/master/zigbee2mqtt",
   "startup": "application",
@@ -58,6 +58,7 @@
       "port": 8099
     },
     "experimental": {},
+    "availability": false,
     "socat": {
       "enabled": false,
       "master": "pty,raw,echo=0,link=/tmp/ttyZ2M,mode=777",
@@ -95,7 +96,7 @@
     "serial": {
       "port": "str",
       "disable_led": "bool?",
-      "adapter": "match(^zstack|deconz|zigate|ezsp$)?"
+      "adapter": "match(zstack|deconz|zigate|ezsp)?"
     },
     "blocklist": [
       "str?"
@@ -113,6 +114,7 @@
       "log_level": "match(^info|debug|warn|error$)?",
       "log_directory": "str?",
       "log_file": "str?",
+      "log_output": ["list(console|file|syslog)?"],
       "log_rotation": "bool?",
       "timestamp_format": "str?",
       "baudrate": "int?",
@@ -137,12 +139,14 @@
       "homeassistant_discovery_topic": "str?",
       "homeassistant_status_topic": "str?",
       "homeassistant_legacy_triggers": "bool?",
+      "homeassistant_legacy_entity_attributes": "bool?",
       "ikea_ota_use_test_url": "bool?",
       "legacy_api": "bool?"
     },
     "device_options": {
       "occupancy_timeout": "int?",
       "temperature_precision": "int?",
+      "humidity_precision": "int?",
       "legacy": "bool?"
     },
     "device_options_string": "str?",
@@ -154,6 +158,7 @@
       "transmit_power": "int?",
       "output": "str?"
     },
+    "availability": "bool?",
     "frontend": {
       "host": "str?",
       "port": "int?"
